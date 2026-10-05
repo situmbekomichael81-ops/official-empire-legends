@@ -1,3 +1,5 @@
+<img src="logo.png" width="500" alt="OEL Logo">
+
 # OFFICIAL EMPIRE LEGENDS (OEL)
 
 Official tech company founded in Ndola by BSE student Michael M. Situmbeko. Focused on ICT, IoT and Automotive embedded solutions.
