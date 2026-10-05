@@ -1,7 +1,8 @@
 # OFFICIAL EMPIRE LEGENDS (OEL)
 
-**Founder: Michael M. Situmbeko | Màcky Bøy Øël | Ndola, Zambia**
-> From Primary Gang Leader to Solo Tech CEO. Building an empire from the ground up.
+Official tech company founded in Ndola by BSE student Michael M. Situmbeko. Focused on ICT, IoT and Automotive embedded solutions.
+
+Motto: Never forget loyalty. I'm the HERO of my own story.
 
 ### 🚀 Live Website
 https://situmbekomichael81-ops.github.io/official-empire-legends/
