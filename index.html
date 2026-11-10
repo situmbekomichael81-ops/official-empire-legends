@@ -1,203 +1,360 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>OFFICIAL EMPIRE LEGENDS | OEL — Michael M. Situmbeko</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050608">
+<meta name="description" content="Official Empire Legends (OEL) is a founder-led Zambian technology and creative initiative building software, digital products and innovative solutions.">
+<title>OEL | Official Empire Legends — Technology & Innovation</title>
 <style>
-:root{
-    --blue:#0a1931;
-    --blue-light:#13274f;
-    --red:#c41e1e;
-    --light:#f4f4f4;
-    --muted:#aaa;
+:root {
+  --bg:#050608;
+  --surface:#0c1017;
+  --surface2:#111923;
+  --blue:#079fe8;
+  --cyan:#42d8e9;
+  --red:#f32636;
+  --white:#f5f8fc;
+  --muted:#a2adbb;
+  --line:rgba(255,255,255,.10);
+  --max:1160px;
 }
-
-*{
-    box-sizing:border-box;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif;line-height:1.7}
+a{color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(5,6,8,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand img{width:58px;height:48px;object-fit:contain}
+.brand strong{font-size:15px;letter-spacing:1.5px;line-height:1.2}
+.brand small{display:block;color:var(--cyan);font-size:10px;letter-spacing:2px;margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:21px}
+.nav-links a{text-decoration:none;color:#c5ced9;font-size:13px;transition:.2s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;padding:11px 19px;border-radius:5px;background:var(--blue);color:white;text-decoration:none;font-weight:700;font-size:13px;border:1px solid var(--blue);transition:.2s}
+.nav-cta:hover,.button:hover{background:#087fba;transform:translateY(-2px)}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;border-radius:5px;padding:9px 12px;font-size:21px}
+.hero{position:relative;overflow:hidden;padding:100px 0 90px;background:radial-gradient(ellipse at 75% 40%,rgba(7,159,232,.15),transparent 42%),radial-gradient(ellipse at 15% 80%,rgba(243,38,54,.10),transparent 35%),#050608}
+.hero:after{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(66,216,233,.12);border-radius:50%;right:-180px;top:40px;box-shadow:0 0 0 35px rgba(7,159,232,.025),0 0 0 75px rgba(243,38,54,.025);pointer-events:none}
+.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:55px;position:relative;z-index:1}
+.hero h1{font-size:clamp(42px,6vw,76px);line-height:1.06;letter-spacing:-2px;margin:18px 0}
+.hero h1 span{background:linear-gradient(90deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:650px;font-size:17px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+.button.secondary{background:transparent;border-color:rgba(255,255,255,.25);color:var(--white)}
+.button.secondary:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero-logo{display:flex;align-items:center;justify-content:center;min-height:300px}
+.hero-logo img{width:min(100%,430px);max-height:330px;object-fit:contain;filter:drop-shadow(0 0 28px rgba(7,159,232,.16))}
+.trust-line{margin-top:35px;color:#8995a4;font-size:12px;letter-spacing:1px}
+section{padding:82px 0}
+.section-head{max-width:720px;margin-bottom:35px}
+.section-head h2{font-size:clamp(29px,4vw,43px);line-height:1.15;margin:10px 0 14px}
+.section-head p{color:var(--muted);margin:0}
+.accent{color:var(--cyan)}
+.about-grid,.founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel,.card{background:linear-gradient(145deg,#101722,#090c11);border:1px solid var(--line);border-radius:10px;padding:27px}
+.panel h3,.card h3{margin:0 0 12px;font-size:19px}
+.panel p,.card p{color:var(--muted);margin:0}
+.values{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.value{padding:13px;background:#0a1119;border-left:2px solid var(--blue);color:#d9e3ee;font-size:13px}
+.services-grid,.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{padding:24px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(66,216,233,.45)}
+.card-icon{font-size:25px;margin-bottom:12px}
+.card .status{display:inline-block;color:var(--cyan);font-size:10px;letter-spacing:1.3px;text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.project-card{border-top:2px solid var(--blue)}
+.project-card:nth-child(2){border-top-color:var(--red)}
+.project-card:nth-child(3){border-top-color:var(--cyan)}
+.project-card p{margin-bottom:15px}
+.project-state{font-size:11px;color:#d8e1eb;border:1px solid var(--line);padding:5px 9px;border-radius:3px;display:inline-block}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.team-card{background:#0c1118;border:1px solid var(--line);padding:20px;border-radius:8px;min-height:165px}
+.team-card.founder{border-color:rgba(7,159,232,.65);background:linear-gradient(145deg,#101e2a,#0b1017)}
+.initials{width:43px;height:43px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--blue),#07527a);font-weight:800;margin-bottom:15px}
+.team-card h3{font-size:14px;margin:0 0 5px}
+.team-card p{font-size:12px;color:var(--muted);margin:0}
+.open-role{color:var(--cyan)!important;font-size:10px!important;text-transform:uppercase;letter-spacing:1px;margin-top:12px!important}
+.founder-label{color:var(--cyan);font-size:10px;letter-spacing:1px;font-weight:800}
+.founder-copy h3{font-size:25px;margin:8px 0}
+.founder-copy p{color:var(--muted)}
+.founder-facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.founder-facts span{border:1px solid var(--line);padding:7px 10px;color:#c6d0dc;font-size:11px;border-radius:4px}
+.careers{background:linear-gradient(120deg,rgba(7,159,232,.10),rgba(243,38,54,.06));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-list{display:grid;gap:13px;margin-top:20px}
+.contact-item{padding:13px 15px;background:#0c1118;border:1px solid var(--line);border-radius:6px}
+.contact-item small{display:block;color:var(--cyan);font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.contact-item a,.contact-item span{overflow-wrap:anywhere;text-decoration:none;font-size:14px}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.social a{border:1px solid var(--line);border-radius:4px;padding:8px 12px;text-decoration:none;font-size:12px}
+.social a:hover{border-color:var(--cyan);color:var(--cyan)}
+.notice{padding:17px 19px;border-left:3px solid var(--red);background:rgba(243,38,54,.06);color:#cbd4df;font-size:13px;margin-top:20px}
+footer{padding:32px 0;border-top:1px solid var(--line);color:#85909d;font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer strong{color:#dce5ee}
+.back-top{color:var(--cyan);text-decoration:none}
+@media(max-width:900px){
+ .nav-links{gap:12px}.nav-links a{font-size:12px}
+ .hero-grid{gap:20px}.team-grid{grid-template-columns:repeat(2,1fr)}
+ .services-grid,.projects-grid{grid-template-columns:repeat(2,1fr)}
 }
-
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:var(--blue);
-    color:white;
-    line-height:1.6;
+@media(max-width:700px){
+ .container{width:min(100% - 30px,var(--max))}
+ .nav{min-height:68px}.brand img{width:48px;height:42px}
+ .menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#080b10;padding:18px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}
+ .nav-cta{margin-top:12px}
+ .hero{padding:65px 0 55px}
+ .hero-grid{grid-template-columns:1fr}
+ .hero-logo{grid-row:1;min-height:170px}
+ .hero-logo img{max-height:190px;max-width:270px}
+ .hero h1{font-size:clamp(39px,12vw,58px)}
+ .hero p{font-size:15px}
+ section{padding:62px 0}
+ .about-grid,.founder-grid,.contact-grid{grid-template-columns:1fr}
+ .services-grid,.projects-grid{grid-template-columns:1fr}
+ .team-grid{grid-template-columns:repeat(2,1fr)}
+ .values{grid-template-columns:1fr 1fr}
 }
-
-header{
-    padding:60px 20px;
-    text-align:center;
-    background:linear-gradient(135deg,#0a1931 0%,#162447 100%);
-    border-bottom:3px solid var(--red);
-}
-
-header img{
-    max-width:500px;
-    width:90%;
-    margin-bottom:20px;
-}
-
-h1{
-    font-size:3rem;
-    letter-spacing:4px;
-    margin:0;
-}
-
-h1 span{
-    color:var(--red);
-}
-
-.tag{
-    color:var(--muted);
-    margin-top:10px;
-    letter-spacing:2px;
-    font-size:0.9rem;
-}
-
-section{
-    max-width:900px;
-    margin:40px auto;
-    padding:0 20px;
-}
-
-.card{
-    background:var(--blue-light);
-    padding:25px;
-    border-radius:12px;
-    margin:15px 0;
-    border-left:4px solid var(--red);
-    text-align:left;
-}
-
-.btn{
-    display:inline-block;
-    background:var(--red);
-    color:white;
-    padding:12px 28px;
-    border-radius:30px;
-    text-decoration:none;
-    margin:10px 5px;
-    font-weight:bold;
-}
-
-.btn:hover{
-    opacity:0.85;
-}
-
-.btn2{
-    background:white;
-    color:var(--blue);
-}
-
-.social a{
-    color:white;
-    margin:0 10px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.social a:hover{
-    color:var(--red);
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    color:#777;
-    font-size:0.9rem;
-}
+@media(max-width:390px){.team-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr}}
 </style>
-
 </head>
-
 <body>
-
 <header>
-
-<img src="logo.png" alt="OEL Official Empire Legends Logo">
-
-<h1>OEL<span> OFFICIAL EMPIRE LEGENDS</span></h1>
-
-<div class="tag">
-WEB DEVELOPMENT | MOBILE APPS | SOFTWARE | UI/UX DESIGN | AI | AUTOMATION | EMBEDDED SYSTEMS
-</div>
-
-<p>
-Founded by Michael M. Situmbeko — Macky Boy ØËL — Software Engineering Student & Developer | Zambia
-</p>
-
-<p>
-<b>Building ideas into technology. Learning. Creating. Evolving.</b>
-</p>
-
-<a class="btn" href="https://wa.me/260974488894">WhatsApp: 0974488894</a>
-
-<a class="btn btn2" href="mailto:situmbekomichael81@gmail.com">Email Me</a>
-
+ <div class="container nav">
+  <a class="brand" href="#home" aria-label="OEL home">
+   <img src="logo.webp" alt="Official Empire Legends logo">
+   <span><strong>OFFICIAL EMPIRE LEGENDS</strong><small>OEL · TECHNOLOGY & INNOVATION</small></span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+   <a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#team">Our Team</a><a href="#careers">Careers</a><a href="#contact">Contact</a>
+   <a class="nav-cta" href="#work">Work With Us</a>
+  </nav>
+ </div>
 </header>
 
-<section>
-
-<div class="card">
-<h3>Who We Are</h3>
-
-<p>
-Official Empire Legends (OEL) is a technology and creative brand founded by Michael Situmbeko, a Software Engineering student and developer from Zambia. OEL represents a journey of learning, building, and turning ideas into practical digital solutions — from websites and mobile applications to software, UI/UX design, automation, AI, and emerging technologies. Built with a passion for technology, creativity, and continuous growth, OEL is focused on creating useful solutions while inspiring the next generation of African tech innovators.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>What We Do</h3>
-
-<ul style="list-style:none; padding:0; line-height:2.2">
-    <li>🌐 Web Development</li>
-    <li>📱 Mobile App Development</li>
-    <li>🎨 UI/UX & Graphic Design</li>
-    <li>💻 Software Development</li>
-    <li>🗄️ Database Development</li>
-    <li>🤖 AI / Computer Vision</li>
-    <li>⚙️ Automation & Embedded Systems</li>
-    <li>🔧 Website Maintenance & Optimization</li>
-    <li>🔐 Cybersecurity Basics</li>
-    <li>☁️ Deployment / Hosting</li>
-</ul>
-
-</div>
-
-<div class="card">
-
-<h3>Connect With OEL</h3>
-
-<p>
-Got an idea, project, or opportunity? Reach out and let's turn it into something real.<br>
-Email: situmbekomicheal8@icloud.com | situmbekomichael81@gmail.com<br>
-Phone / WhatsApp: 0974488894
-</p>
-
-<div class="social">
-
-<p>
-<a href="https://www.tiktok.com/@rockstaroel8" target="_blank" rel="noopener noreferrer">TikTok</a> |
-<a href="https://www.facebook.com/share/1HdHKeSWNU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a> |
-<a href="https://www.instagram.com/mackyboy____oel/" target="_blank" rel="noopener noreferrer">Instagram</a>
-</p>
-
-</div>
-
-</div>
-
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">A Zambian technology & creative initiative</div>
+   <h1>Ideas into<br><span>Innovation.</span></h1>
+   <p>Official Empire Legends (OEL) is a founder-led initiative exploring technology, software development and digital creativity. We build, learn and turn promising ideas into practical digital experiences.</p>
+   <div class="hero-actions">
+    <a class="button" href="#projects">Explore Our Work</a>
+    <a class="button secondary" href="#contact">Connect With OEL</a>
+   </div>
+   <div class="trust-line">BUILD · CREATE · INNOVATE · EVOLVE</div>
+  </div>
+  <div class="hero-logo"><img src="logo.webp" alt="OEL — Official Empire Legends"></div>
+ </div>
 </section>
 
-<footer>
-© 2026 OFFICIAL EMPIRE LEGENDS (OEL) — Created, Designed & Built by Michael M. Situmbeko — Macky Boy ØËL | Zambia
-</footer>
+<section id="about">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Who we are</div>
+   <h2>More than a name.<br><span class="accent">A vision in progress.</span></h2>
+   <p>OEL is an independent, founder-led technology and creative initiative originating in Zambia. It brings together software ideas, digital products, emerging technologies and original creative work under one identity.</p>
+  </div>
+  <div class="about-grid">
+   <article class="panel">
+    <h3>Our Mission</h3>
+    <p>To explore, design and develop useful digital solutions and creative products through continuous learning, practical engineering and purposeful innovation.</p>
+   </article>
+   <article class="panel">
+    <h3>Our Vision</h3>
+    <p>To grow OEL into a recognised technology and creative brand with meaningful projects, trusted collaborations and opportunities reaching beyond Zambia.</p>
+   </article>
+  </div>
+  <div class="values">
+   <div class="value">01 · Innovation</div><div class="value">02 · Integrity</div>
+   <div class="value">03 · Creativity</div><div class="value">04 · Discipline</div>
+   <div class="value">05 · Quality</div><div class="value">06 · Continuous growth</div>
+  </div>
+ </div>
+</section>
 
+<section id="services" style="background:#080b10">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">What we work on</div>
+   <h2>Technology with <span class="accent">purpose.</span></h2>
+   <p>These are OEL's areas of focus and the kinds of projects we are developing capability to deliver. Scope and availability are agreed for each enquiry.</p>
+  </div>
+  <div class="services-grid">
+   <article class="card"><div class="card-icon">⌘</div><h3>Web Development</h3><p>Responsive websites, web experiences, business pages and digital platforms.</p></article>
+   <article class="card"><div class="card-icon">▣</div><h3>Software & Applications</h3><p>Software concepts, application development, databases and practical digital tools.</p></article>
+   <article class="card"><div class="card-icon">✳</div><h3>AI & Computer Vision</h3><p>Exploration of intelligent systems, image processing and computer-vision applications.</p></article>
+   <article class="card"><div class="card-icon">⚙</div><h3>Automation & Embedded Systems</h3><p>Interest in connected devices, automation and software that interacts with hardware.</p></article>
+   <article class="card"><div class="card-icon">◈</div><h3>UI/UX & Digital Design</h3><p>User-focused interfaces, visual identity and clear digital experiences.</p></article>
+   <article class="card"><div class="card-icon">▶</div><h3>Creative Digital Media</h3><p>Original digital content and creative entertainment projects under the OEL identity.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Selected work</div>
+   <h2>Ideas becoming <span class="accent">real projects.</span></h2>
+   <p>Our projects reflect ongoing learning, experimentation and development. Their status is shown honestly.</p>
+  </div>
+  <div class="projects-grid">
+   <article class="card project-card">
+    <div class="card-icon">▣</div><span class="status">In development</span>
+    <h3>OEL STREAM</h3>
+    <p>A web-based digital entertainment platform project exploring content discovery, catalogues and media playback.</p>
+    <span class="project-state">Active development</span>
+   </article>
+   <article class="card project-card">
+    <div class="card-icon">◉</div><span class="status">Early exploration</span>
+    <h3>OEL ADAS</h3>
+    <p>An automotive technology exploration focused on computer vision, road detection and driver-assistance concepts.</p>
+    <span class="project-state">Research & prototyping</span>
+   </article>
+   <article class="card project-card">
+    <div class="card-icon">✦</div><span class="status">Creative work</span>
+    <h3>OEL Originals</h3>
+    <p>Original creative experiments and digital content produced under the Official Empire Legends identity.</p>
+    <span class="project-state">Ongoing creative work</span>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="team" style="background:#080b10">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Leadership & future team</div>
+   <h2>Built with vision.<br><span class="accent">Growing together.</span></h2>
+   <p>OEL currently has one active founder. The other leadership positions below are planned future appointments, not current employees.</p>
+  </div>
+  <div class="team-grid">
+   <article class="team-card founder">
+    <div class="initials">MS</div><div class="founder-label">FOUNDER · ACTIVE</div>
+    <h3>Michael M. Situmbeko</h3><p>Founder & Chief Executive Officer (CEO)</p>
+   </article>
+   <article class="team-card"><div class="initials">CT</div><h3>Chief Technology Officer</h3><p>Technology strategy & technical direction</p><p class="open-role">Future appointment</p></article>
+   <article class="team-card"><div class="initials">CO</div><h3>Chief Operating Officer</h3><p>Operations & organisational coordination</p><p class="open-role">Future appointment</p></article>
+   <article class="team-card"><div class="initials">CF</div><h3>Chief Financial Officer</h3><p>Financial planning & stewardship</p><p class="open-role">Future appointment</p></article>
+   <article class="team-card"><div class="initials">SE</div><h3>Head of Software Engineering</h3><p>Software architecture & development</p><p class="open-role">Future appointment</p></article>
+   <article class="team-card"><div class="initials">AI</div><h3>Head of AI & Automation</h3><p>Intelligent systems & automation</p><p class="open-role">Future appointment</p></article>
+   <article class="team-card"><div class="initials">CM</div><h3>Head of Creative & Media</h3><p>Creative production & digital media</p><p class="open-role">Future appointment</p></article>
+   <article class="team-card"><div class="initials">BD</div><h3>Head of Business Development & Partnerships</h3><p>Growth, clients & partnerships</p><p class="open-role">Future appointment</p></article>
+  </div>
+  <div class="founder-grid" style="margin-top:22px">
+   <article class="panel founder-copy">
+    <div class="founder-label">MEET THE FOUNDER</div>
+    <h3>Michael M. Situmbeko</h3>
+    <p>Founder and CEO of Official Empire Legends. A Software Engineering student and developer from Zambia, Michael leads OEL's vision, project direction and early-stage development.</p>
+    <div class="founder-facts"><span>Founder & CEO</span><span>Zambia</span><span>Software Engineering</span></div>
+   </article>
+   <article class="panel">
+    <h3>Our approach to leadership</h3>
+    <p>These eight roles describe the leadership structure OEL aims to build over time. Appointments will be announced only when people officially join and agree to be represented here.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="careers" id="careers">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">The future of OEL</div>
+   <h2>There is room to <span class="accent">build together.</span></h2>
+   <p>As OEL grows, we hope to connect with talented developers, designers, creative thinkers and people who believe in building useful technology.</p>
+  </div>
+  <article class="panel">
+   <h3>Future opportunities</h3>
+   <p>Leadership and collaboration opportunities will be announced as the initiative develops. No vacancies are currently being advertised. For genuine expressions of interest, use the official contact details below.</p>
+   <div style="margin-top:20px"><a class="button" href="#contact">Express Your Interest</a></div>
+  </article>
+ </div>
+</section>
+
+<section id="work">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Collaborate with us</div>
+   <h2>Have an idea? <span class="accent">Let's talk.</span></h2>
+   <p>For project enquiries, collaboration, mentorship, partnerships or professional opportunities, contact OEL through the channels listed below.</p>
+  </div>
+  <div class="about-grid">
+   <article class="panel"><h3>Project enquiries</h3><p>Share what you are trying to build, the problem you want to solve and your expected timeline. We can discuss the scope and whether it is a good fit.</p></article>
+   <article class="panel"><h3>Working transparently</h3><p>Project scope, deliverables, costs and timelines should be agreed in writing before work begins. Never send money to an unverified person claiming to represent OEL.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="contact" style="background:#080b10">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Official channels</div>
+   <h2>Connect with <span class="accent">OEL.</span></h2>
+   <p>Use these published channels to make contact or verify a communication claiming to come from OEL.</p>
+  </div>
+  <div class="contact-grid">
+   <article class="panel">
+    <h3>Contact details</h3>
+    <div class="contact-list">
+     <div class="contact-item"><small>Official email</small><a href="mailto:situmbekomichael81@gmail.com">situmbekomichael81@gmail.com</a></div>
+     <div class="contact-item"><small>Additional email</small><a href="mailto:situmbekomicheal8@icloud.com">situmbekomicheal8@icloud.com</a></div>
+     <div class="contact-item"><small>WhatsApp / Phone</small><a href="https://wa.me/260974488894" target="_blank" rel="noopener noreferrer">+260 974 488 894</a></div>
+     <div class="contact-item"><small>Alternative phone</small><a href="tel:+260954181598">+260 954 181 598</a></div>
+     <div class="contact-item"><small>Location</small><span>Zambia</span></div>
+    </div>
+    <div class="social">
+     <a href="https://www.tiktok.com/@rockstaroel8" target="_blank" rel="noopener noreferrer">TikTok</a>
+     <a href="https://www.facebook.com/share/1HdHKeSWNU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
+     <a href="https://www.instagram.com/mackyboy____oel/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+   </article>
+   <article class="panel">
+    <h3>OEL communication & verification</h3>
+    <p>To help protect yourself when dealing with someone claiming to represent OEL:</p>
+    <ul style="color:var(--muted);padding-left:20px">
+     <li>Verify contact details against the channels published on this website.</li>
+     <li>Ask for written project scope, pricing and deliverables.</li>
+     <li>Request an agreed written record of payments and receipts where applicable.</li>
+     <li>Contact the founder through the published channels if something seems suspicious.</li>
+    </ul>
+    <div class="notice">OEL does not ask people to trust unofficial accounts or unknown representatives. This website is an official communication point for the founder-led OEL initiative; it does not itself guarantee that third-party messages or accounts are genuine.</div>
+   </article>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-row">
+  <div><strong>OFFICIAL EMPIRE LEGENDS · OEL</strong><br>Technology · Innovation · Digital Creativity<br>© <span id="year">2026</span> OEL. All rights reserved.</div>
+  <div>Founder-led initiative · Zambia<br><a class="back-top" href="#home">Back to top ↑</a></div>
+ </div>
+</footer>
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const navLinks=document.getElementById("navLinks");
+menuToggle.addEventListener("click",()=>{
+ const open=navLinks.classList.toggle("open");
+ menuToggle.setAttribute("aria-expanded",String(open));
+ menuToggle.setAttribute("aria-label",open?"Close navigation":"Open navigation");
+ menuToggle.textContent=open?"×":"☰";
+});
+navLinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{
+ navLinks.classList.remove("open");
+ menuToggle.setAttribute("aria-expanded","false");
+ menuToggle.setAttribute("aria-label","Open navigation");
+ menuToggle.textContent="☰";
+}));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
-
