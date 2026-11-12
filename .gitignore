@@ -1,0 +1,11 @@
+# Local backups
+*.save
+*.backup
+*.bak
+*.pre-homepage-build
+*.original-backup
+*.backup-before-second-phone
+
+# Local development
+.DS_Store
+Thumbs.db

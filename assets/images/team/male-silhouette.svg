@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440">
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071b55"/><stop offset=".55" stop-color="#0755bd"/><stop offset="1" stop-color="#090d24"/></linearGradient>
+<linearGradient id="suit" x2="1" y2="1"><stop stop-color="#172b4d"/><stop offset="1" stop-color="#050a18"/></linearGradient>
+</defs>
+<rect width="400" height="440" rx="22" fill="url(#bg)"/>
+<path d="M0 330L120 180M280 440L400 300" stroke="#ed123c" stroke-width="22" opacity=".8"/>
+<circle cx="200" cy="145" r="76" fill="#030817"/>
+<path d="M125 130Q125 45 200 45Q275 45 275 130L260 205H140Z" fill="#030817"/>
+<path d="M155 205L155 255L105 280Q45 310 35 440H365Q355 310 295 280L245 255V205Z" fill="#030817"/>
+<path d="M155 255L200 310L245 255L225 440H175Z" fill="url(#suit)"/>
+<path d="M180 275L200 310L220 275L210 440H190Z" fill="#1268d9"/>
+<path d="M0 420H400" stroke="#e81742" stroke-width="5"/>
+<text x="200" y="400" fill="#fff" font-family="Arial" font-size="17" text-anchor="middle" letter-spacing="4">OEL</text>
+</svg>
